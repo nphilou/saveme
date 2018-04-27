@@ -8,7 +8,7 @@ sudo apt update && sudo apt upgrade
 sudo apt install nvidia-drivers
 ```
 
-## WLAN (Broadcom BCM43228 802.11a/b/g/n)
+## WLAN (Broadcom BCM43228 802.11a/b/g/n)  
 Integrated WLAN card on **Asus Maximus V Formula motherboard**
 
 ```
