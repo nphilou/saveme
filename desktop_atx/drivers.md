@@ -1,6 +1,6 @@
 # Drivers
 
-## Nvidia (Asus Strix GTX 970)
+### Nvidia (Asus Strix GTX 970)
 
 Add **contrib** and **non-free** to */etc/apt/sources.list*
 
@@ -10,7 +10,7 @@ sudo apt install nvidia-drivers
 ```
 
 
-## WLAN (Broadcom BCM43228 802.11a/b/g/n)
+### WLAN (Broadcom BCM43228 802.11a/b/g/n)
 
 Integrated WLAN card on **Asus Maximus V Formula motherboard**
 
