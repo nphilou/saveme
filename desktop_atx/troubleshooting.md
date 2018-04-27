@@ -21,7 +21,7 @@ sudo showkey -k
 xmodmap -pke
 ```
 
-## Drives mounting
+## Drives mounting
 > not authorized to perform operation
 
 ```
