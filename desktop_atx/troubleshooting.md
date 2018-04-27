@@ -1,7 +1,6 @@
 # Troubleshooting
 
 ## Playerctl is missing
-
 https://github.com/acrisci/playerctl/releases
 
 ```
@@ -10,7 +9,6 @@ sudo dpkg -i playerctl-0.6.0_amd64.deb
 ```
 
 ## Play/Pause keys
-
 Configuration for *~/.config/i3/config*
 
 ```
@@ -26,7 +24,6 @@ xmodmap -pke
 ```
 
 ## Drives mounting
-
 > not authorized to perform operation
 
 ```
