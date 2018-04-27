@@ -8,7 +8,7 @@ sudo apt update && sudo apt upgrade
 sudo apt install nvidia-drivers
 ```
 
-## Nvidia (Asus Strix GTX 970)
+## WLAN (Broadcom BCM43228 802.11a/b/g/n)
 Add **contrib** and **non-free** to */etc/apt/sources.list*
 
 ```
