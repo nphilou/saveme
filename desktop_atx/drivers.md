@@ -16,13 +16,3 @@ sudo apt install linux-image-$(uname -r|sed 's,[^-]*-[^-]*-,,') linux-headers-$(
 sudo modprobe -r b44 b43 b43legacy ssb brcmsmac bcma
 sudo modprobe wl
 ```
-
-
-## WLAN (Broadcom BCM43228 802.11a/b/g/n)  
-Integrated WLAN card on **Asus Maximus V Formula motherboard**
-
-```
-sudo apt install linux-image-$(uname -r|sed 's,[^-]*-[^-]*-,,') linux-headers-$(uname -r|sed 's,[^-]*-[^-]*-,,') broadcom-sta$
-sudo modprobe -r b44 b43 b43legacy ssb brcmsmac bcma
-sudo modprobe wl
-```
