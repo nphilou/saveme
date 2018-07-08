@@ -1,0 +1,454 @@
+[colors]
+background = #222
+foreground = #eee
+linecolor = #fba922
+bordercolor = #333
+accent = #e60053
+
+[settings]
+screenchange-reload = true
+;throttle-output-for = 10
+;throttle-output = 5
+;throttle-input-for = 40
+
+;compositing-background = over
+;compositing-background = screen
+;compositing-foreground = xor
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[bar/top]
+enable-ipc = true
+monitor = ${env:MONITOR:eDP-1}
+width = 100%
+height = 24
+;radius = 5.0
+;fixed-center = false
+;override-redirect = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+;background-0 = #333
+;background-1 = #222
+;background-2 = ${self.background-1}
+;background-3 = ${self.background-1}
+;background-4 = ${self.background-1}
+;background-5 = ${self.background-1}
+;background-6 = ${self.background-1}
+;background-7 = #111
+
+line-color = ${colors.linecolor}
+underline-size = 1
+overline-size = 2
+
+;border-size = 5
+;border-color = 0
+;border-bottom-size = 0
+border-bottom-size = 2
+border-bottom-color = ${colors.bordercolor}
+
+padding-left = 0
+padding-right = 1
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = dina:pixelsize=9;3
+font-1 = siji:pixelsize=10;3
+font-2 = unifont:size=6;3
+font-3 = FontAwesome:size=12;3
+
+
+modules-left =
+;modules-center = mpd
+modules-center = xwindow
+modules-right = xbacklight volume memory cpu date
+
+tray-position = right
+tray-padding = 4
+tray-maxsize = 16
+;tray-transparent = true
+;tray-detached = true
+;tray-offset-x = 50
+
+wm-restack = i3
+
+;dim-value = 0.2
+
+;click-left =
+;click-middle =
+;click-right =
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+;double-click-left = notify-send -u low doubleclick
+;double-click-right = notify-send -u low doubleclick2
+
+# bar/module specific vars
+bspwm-focused-overline = ${colors.linecolor}
+bspwm-focused-underline = #cc333333
+
+[bar/bottom]
+inherit = bar/top
+
+enable-ipc = true
+monitor = ${env:MONITOR:eDP-1}
+;monitor-fallback = ${env:MONITOR:DP1}
+bottom = true
+;override-redirect = true
+height = 26
+
+underline-size = ${bar/top.overline-size}
+overline-size = ${bar/top.underline-size}
+
+;border-top-size = 2
+;border-top-color = ${colors.bordercolor}
+border-bottom-size = 0
+
+modules-left = i3
+modules-center =
+modules-right = xbacklight volume memory wifi battery date
+
+wm-restack = ${bar/top.wm-restack}
+
+tray-position = none
+
+# bar/module specific vars
+bspwm-focused-overline = #cc333333
+bspwm-focused-underline = ${colors.linecolor}
+
+[bar/dp1]
+inherit = bar/top
+
+enable-ipc = true
+monitor = ${env:MONITOR:DP1}
+bottom = true
+;override-redirect = true
+height = 30
+
+underline-size = ${bar/top.overline-size}
+overline-size = ${bar/top.underline-size}
+
+;border-top-size = 2
+;border-top-color = ${colors.bordercolor}
+border-bottom-size = 0
+
+modules-left = i3
+modules-center =
+modules-right = volume memory wifi battery date
+
+wm-restack = ${bar/top.wm-restack}
+
+tray-position = none
+
+# bar/module specific vars
+bspwm-focused-overline = #cc333333
+bspwm-focused-underline = ${colors.linecolor}
+
+
+[module/bspwm]
+type = internal/bspwm
+
+enable-scroll = false
+
+format = <label-state> <label-mode>
+;format = <label-monitor> <label-state> <label-mode>
+;pin-workspaces = false
+
+inline-mode = true
+
+;label-focused = %icon%
+label-focused = o
+label-focused-background = #383838
+label-focused-foreground = #fff
+label-focused-overline = ${root.bspwm-focused-overline}
+label-focused-underline = ${root.bspwm-focused-underline}
+label-focused-padding = 2
+
+label-focused-occupied = %{O-1}⏺%{O-1}
+label-focused-occupied-background = ${self.label-focused-background}
+label-focused-occupied-foreground = ${self.label-focused-foreground}
+label-focused-occupied-overline = ${self.label-focused-overline}
+label-focused-occupied-underline = ${self.label-focused-underline}
+label-focused-occupied-padding = ${self.label-focused-padding}
+
+;label-occupied = %icon%
+label-occupied = %{O-1}⏺%{O-1}
+label-occupied-padding = 2
+
+;label-urgent = %icon%
+label-urgent = !
+label-urgent-background = #bd2c40
+label-urgent-padding = 2
+
+;label-empty = %icon%
+label-empty = x
+label-empty-foreground = #444
+label-empty-padding = 2
+
+label-monocle = 
+label-monocle-padding = 2
+label-monocle-background = #171717
+label-monocle-foreground = ${colors.accent}
+
+label-floating = 
+label-floating-padding = 2
+label-floating-background = #171717
+label-floating-foreground = ${colors.accent}
+
+label-locked = locked
+label-locked-padding = 1
+label-sticky = sticky
+label-sticky-padding = 1
+label-private = private
+label-private-padding = 1
+;label-pseudotiled = pseudo
+;label-pseudotiled-padding = 2
+;label-pseudotiled-background = #f09
+;label-tiled = tiled
+;label-tiled-padding = 2
+;label-tiled-background = #f90
+
+label-dimmed-background = ${root.background}
+label-dimmed-overline = ${root.background}
+label-dimmed-underline = ${root.background}
+label-dimmed-active-foreground = #f00
+
+[module/i3]
+type = internal/i3
+index-sort = true
+pin-workspaces = true
+wrapping-scroll = true
+;reverse-scroll = false
+;enable-scroll = false
+
+format = <label-state> <label-mode>
+
+label-mode = %mode%
+label-mode-padding = 1
+label-mode-background = ${colors.accent}
+
+label-focused = %index% %icon%
+label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-foreground = ${module/bspwm.label-focused-foreground}
+label-focused-overline= ${module/bspwm.label-focused-overline}
+label-focused-underline= ${module/bspwm.label-focused-underline}
+label-focused-padding = ${module/bspwm.label-focused-padding}
+
+label-unfocused = %index% %icon%
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+
+label-urgent = %index% %icon%
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+label-visible = %index% %icon%
+label-visible-padding = ${module/bspwm.label-empty-padding}
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-default = 
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+label = %percentage%%
+format-prefix = "CPU "
+format-prefix-foreground = #666
+
+[module/memory]
+type = internal/memory
+interval = 2
+label = %percentage_used%%
+format-prefix = " "
+format-prefix-foreground = #666
+
+[module/wifi]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+;udspeed-minwidth = 0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-prefix = " "
+format-connected-prefix-foreground = #666
+format-connected-prefix-offset = -6
+label-connected = %essid% - %local_ip%
+
+format-disconnected = <label-disconnected>
+label-disconnected = 
+label-disconnected-foreground = #666
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = #666
+
+[module/wired]
+type = internal/network
+interface = net0
+interval = 3.0
+
+format-connected-prefix = " "
+format-connected-prefix-foreground = #666
+label-connected = %local_ip%
+
+;format-disconnected = <label-disconnected>
+;format-disconnected-prefix = " "
+;format-disconnected-prefix-foreground = #666
+;label-disconnected = not connected
+;label-disconnected-foreground = #999
+
+[module/date]
+type = internal/date
+label = %{F#666}%{F-} %date%  %{F#e60053}%{F-} %time%
+date = %Y-%m-%d
+time = %H:%M
+interval = 5
+
+[module/xbacklight]
+type = internal/xbacklight
+format = <ramp> <label>
+ramp-0 = ""
+ramp-foreground = #666
+label-foreground = ${root.foreground}
+
+[module/volume]
+type = internal/volume
+master_mixer = Master
+headphone-id = 9
+master-soundcard=hw:1
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix =
+format-muted-foreground = #777
+label-muted = 
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = #666
+
+ramp-headphones-0 = 
+ramp-headphones-1 = 
+ramp-headphones-foreground = #666
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+full-at = 104
+time-format = %H:%M
+
+format-charging = <label-charging>
+label-charging = %percentage%% - %time%
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%% - %time%
+
+format-full = <label-full>
+format-full-prefix = ""
+format-full-prefix-foreground = #666
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = #666
+
+format-charging-prefix = " "
+format-charging-prefix-foreground = #666
+
+[module/power-menu]
+type = custom/menu
+
+label-open = 
+label-close = 
+label-separator = /
+label-separator-margin = 1
+
+menu-0-0 = Terminate WM
+menu-0-0-foreground = ${colors.accent}
+menu-0-0-exec = bspc quit -1
+menu-0-1 = Reboot
+menu-0-1-foreground = ${colors.accent}
+menu-0-1-exec = menu-open-1
+menu-0-2 = Power off
+menu-0-2-foreground = ${colors.accent}
+menu-0-2-exec = menu-open-2
+menu-0-3 = Lock
+menu-0-3-foreground = ${colors.accent}
+menu-0-3-exec = lockscreen
+
+menu-1-0 = Cancel
+menu-1-0-foreground = ${colors.accent}
+menu-1-0-exec = menu-open-0
+menu-1-1 = Reboot
+menu-1-1-foreground = ${colors.accent}
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = Power off
+menu-2-0-foreground = ${colors.accent}
+menu-2-0-exec = sudo poweroff
+menu-2-1 = Cancel
+menu-2-1-foreground = ${colors.accent}
+menu-2-1-exec = menu-open-0
+
+[module/app-menu]
+type = custom/menu
+label-open = 
+label-close = 
+
+menu-0-0 = Vimperator
+menu-0-0-exec = web
+menu-0-1 = Termite
+menu-0-1-exec = termite
+menu-0-2 = Pcmanfm
+menu-0-2-exec = pcmanfm
+
+[module/xkeyboard]
+type = internal/xkeyboard
+
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-foreground = #666
+
+label-layout = %layout%
+
+label-indicator-padding = 2
+label-indicator-background = ${colors.accent}
+
+[module/xwindow]
+type = internal/xwindow
+format = <label>
+label-maxlen = 75
+
+[module/counter]
+type = internal/counter
+format = <counter>
+interval = 0.1
+
+[module/spotify]
+type = custom/script
+exec = ~/.config/polybar/spotify.sh %artist% - %title%
+tail = true
+interval = 2
+
+;vim:ft=dosini
